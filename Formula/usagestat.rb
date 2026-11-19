@@ -3,17 +3,27 @@
 class Usagestat < Formula
   desc "Scriptable CLI for local agent usage data"
   homepage "https://github.com/hashimkarim/usagestat"
-  version "2.3.1"
+  version "2.3.2"
   license "MIT"
-  depends_on :linux
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/hashimkarim/usagestat/releases/download/v2.3.1/usagestat-linux-aarch64.tar.gz"
-      sha256 "84c4ada89a74e52225fad8f401755851b284a9303df180122d87cec3e1aa871c"
+      url "https://github.com/hashimkarim/usagestat/releases/download/v2.3.2/usagestat-linux-aarch64.tar.gz"
+      sha256 "93a79f578695155a3db4c8189664e96765c9fbb5392fbea906017a91ebef1471"
     else
-      url "https://github.com/hashimkarim/usagestat/releases/download/v2.3.1/usagestat-linux-x86_64.tar.gz"
-      sha256 "4c4df8e763b0fe54d9b45b705996729d9bdd565385e8376d69979d2ba274c865"
+      url "https://github.com/hashimkarim/usagestat/releases/download/v2.3.2/usagestat-linux-x86_64.tar.gz"
+      sha256 "dfebd8c33290a3e8bd2e81963ed57e5bf4e887f171b76e8687845580ed8c69c8"
+    end
+  end
+
+  on_macos do
+    depends_on macos: :big_sur
+    if Hardware::CPU.arm?
+      url "https://github.com/hashimkarim/usagestat/releases/download/v2.3.2/usagestat-macos-aarch64.tar.gz"
+      sha256 "0920bf2d98fd18b358e94e5c30d90eef159c066ee74d4781cdf3ea6bcf40d41d"
+    else
+      url "https://github.com/hashimkarim/usagestat/releases/download/v2.3.2/usagestat-macos-x86_64.tar.gz"
+      sha256 "7ff4ff35871ff5b855c36e0c42221945169389fc9f7f428b89f85b93c988855e"
     end
   end
 
